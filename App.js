@@ -62,6 +62,10 @@ render() {
         <H1 style={styles.smalldivider}>Heading 1</H1>
         <H2 style={styles.smalldivider}>Heading 2</H2>
         <H3 style={styles.smalldivider}>Heading 3</H3>
+
+        <Text>
+          Regular
+        </Text>
         
 {/*        {this.state.loaded ?
         <View><Text style={styles.smalldivider}>There are currently {this.state.peopledata.length} humans in space</Text>
@@ -83,9 +87,7 @@ render() {
         </Content>
         <Footer>
           <FooterTab style={styles.footer}>
-            <Button block rounded>
-              <Text >Footer</Text>
-            </Button>
+              <Text style={styles.white}>usfslk.github.io</Text>
           </FooterTab>
         </Footer>
       </Container>
@@ -106,7 +108,9 @@ container: {
     backgroundColor: '#333'
   },
   footer: {
-    backgroundColor: '#222'
+    backgroundColor: '#222',
+    alignItems:  'center',
+    justifyContent:  'center',  
   }, 
   smalldivider: {
     marginBottom: 10,
@@ -132,5 +136,9 @@ container: {
    name: {
     fontWeight: '400',
     fontSize: 16,
+   },
+   white: {
+    color: '#fff',
+
    }
 });
