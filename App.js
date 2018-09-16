@@ -16,16 +16,16 @@ export default class App extends Component {
       loading: false,
     };
   }
-/*
-apiCall() {
-    let url = "http://google.com"
-    this.setState({ loading: true  });
+
+/*apiCall() {
+    let url = "https://talaikis.com/api/quotes/"
       fetch(url)
         .then((response) => response.json())
         .then((responseJson) => {
           this.setState({
             data: responseJson,
             loading: false,
+            loaded: true,
           });
           
         }) 
@@ -39,57 +39,79 @@ componentDidMount() {
 render() {
   return ( 
       <Container>
-      <StatusBar backgroundColor={'#333'} hidden/>
+      <StatusBar backgroundColor={'#a31f34'} hidden/>
         <Header noShadow noLeft style={styles.header} >
           <Body>
-            <Title>Spacr.js</Title>
+            <Title>Kot.js</Title>
           </Body>
           <Right />
         </Header>
 
-        <ListItem itemDivider>
-          <Text>This is a simple app with must-have libraries pre installed. Feel free to use it for personal and commercial purposes. MIT License.</Text>
-        </ListItem> 
-
-        {this.state.loading ? <View style={styles.spinner}>
-        <Spinner size={50} type={'Wave'} color={'#333'}/>
+         {this.state.loading ? <View style={styles.spinner}>
+        <Spinner size={50} type={'Wave'} color={'#423A47'}/>
         </View> : null }
 
         <Content style={styles.container}>
 
-        <View style={styles.largedivider}></View>
-
-        <H1 style={styles.smalldivider}>Heading 1</H1>
-        <H2 style={styles.smalldivider}>Heading 2</H2>
-        <H3 style={styles.smalldivider}>Heading 3</H3>
-
-        <Text>
-          Regular
-        </Text>
-        
 {/*        {this.state.loaded ?
-        <View><Text style={styles.smalldivider}>There are currently {this.state.peopledata.length} humans in space</Text>
+        <View>
         <FlatList
-        data={this.state.peopledata}
+        data={this.state.data}
         showsVerticalScrollIndicator={false}
-        keyExtractor={(item, index) => item.name}
+        keyExtractor={(item, index) => item.author}
         renderItem={({ item, index }) => (
 
         <View style={styles.card} >
-          <Text style={styles.craft}>({item.craft})</Text>
-          <Text style={styles.name}>{item.name}</Text>
+          <Text style={styles.quote}>{item.quote}</Text>
+          <Text style={styles.author}>{item.author}</Text>
         </View>
 
          )}/>
         </View>
         : null }*/}
+
+        <View style={styles.smalldivider}></View>
+
+        <View style={styles.card} >
+          <Text style={styles.quote}>I want to host a religious show. I'm sure nobody will be wanting the 11 o'clock spot on Sunday morning. I think we should really get some of our own preachers and preach that gay is good. And we'd have a great choir.</Text>
+          <Text style={styles.author}>Martin Luther King, Jr.</Text>
+        </View>
+
+        <View style={styles.card} >
+          <Text style={styles.quote}>he means by which we live have outdistanced the ends for which we live. Our scientific power has outrun our spiritual power. We have guided missiles and misguided men.</Text>
+          <Text style={styles.author}>John Doe</Text>
+        </View>
+
+        <View style={styles.card} >
+          <Text style={styles.quote}>I lived the true American dream, because I was able to pursue what I set as my goals at a very young age.</Text>
+          <Text style={styles.author}>Russell Crowe"</Text>
+        </View>
+
+        <View style={styles.card} >
+          <Text style={styles.quote}>he means by which we live have outdistanced the ends for which we live. Our scientific power has outrun our spiritual power. We have guided missiles and misguided men.</Text>
+          <Text style={styles.author}>John Doe</Text>
+        </View>
+
+        <View style={styles.card} >
+          <Text style={styles.quote}>I lived the true American dream, because I was able to pursue what I set as my goals at a very young age.</Text>
+          <Text style={styles.author}>Russell Crowe"</Text>
+        </View>
+
+        <View style={styles.card} >
+          <Text style={styles.quote}>I want to host a religious show. I'm sure nobody will be wanting the 11 o'clock spot on Sunday morning. I think we should really get some of our own preachers and preach that gay is good. And we'd have a great choir.</Text>
+          <Text style={styles.author}>Martin Luther King, Jr.</Text>
+        </View>
+
+        <View style={styles.smalldivider}></View>
                         
         </Content>
+
         <Footer>
           <FooterTab style={styles.footer}>
               <Text style={styles.white}>usfslk.github.io</Text>
           </FooterTab>
         </Footer>
+
       </Container>
     );
   }
@@ -97,7 +119,7 @@ render() {
 
 const styles = StyleSheet.create({
 container: {
- marginHorizontal: 25
+ backgroundColor: '#7E474C'
 },
  progress: {
   height: 200,
@@ -105,10 +127,10 @@ container: {
   header: {
     paddingTop: getStatusBarHeight(),
     height: 54 + getStatusBarHeight(),
-    backgroundColor: '#333'
+    backgroundColor: '#7E474C'
   },
   footer: {
-    backgroundColor: '#222',
+    backgroundColor: '#7E474C',
     alignItems:  'center',
     justifyContent:  'center',  
   }, 
@@ -124,21 +146,25 @@ container: {
     justifyContent:  'center',
   },
   card: {
-    flexDirection: 'row' ,
-    alignItems: 'center',
-    justifyContent: 'flex-start',   
+    backgroundColor: '#423A47',
+    paddingVertical: 20,
+    paddingHorizontal: 15,
+    borderRadius: 7,
+    marginVertical: 5,
+    marginHorizontal: 15
   },
-  craft: {
-    fontWeight: '200',
-    fontSize: 14,
-    marginRight: 10,
-   },
-   name: {
-    fontWeight: '400',
+  quote: {
+    fontWeight: '600',
     fontSize: 16,
+    color: '#E9E9CD'
+   },
+   author: {
+    fontWeight: '200',
+    fontSize: 12,
+    color: '#D0D0AE',
    },
    white: {
-    color: '#fff',
+    color: '#E9E9CD',
 
    }
 });
