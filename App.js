@@ -5,19 +5,20 @@
 
 import React, {Component} from 'react';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
-import {Platform, StyleSheet, View, Alert, FlatList, StatusBar} from 'react-native';
+import {Platform, StyleSheet, View, Alert, FlatList, StatusBar, Image, TouchableOpacity, Linking, TouchableHighlight} from 'react-native';
 import { Container, Header, H1, H2, H3, Title, Item, Label, Card, CardItem, CheckBox, Input, Content, Footer, FooterTab, Button, ListItem, Left, Right, Body, Icon, Text } from 'native-base';
 import Spinner from 'react-native-spinkit';
 
+var logo = require ('./assets/logo.png')
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
+      loading: true,
     };
   }
 
-/*apiCall() {
+apiCall() {
     let url = "https://talaikis.com/api/quotes/"
       fetch(url)
         .then((response) => response.json())
@@ -35,26 +36,38 @@ componentDidMount() {
   this.apiCall();
   const data = this.state;  
 }
-*/
+
 render() {
   return ( 
       <Container>
       <StatusBar backgroundColor={'#a31f34'} hidden/>
         <Header noShadow noLeft style={styles.header} >
-          <Body>
-            <Title>Kot.js</Title>
-          </Body>
-          <Right />
+
+        <View>
+          <Text style={styles.headertext}>
+          KotScotch
+          </Text>
+        </View>
+
+        <View>
+        <TouchableHighlight
+          onPress={this.apiCall} >          
+          <Image style={styles.logo}
+            source={logo}
+          />
+        </TouchableHighlight>
+        </View>
+
         </Header>
 
          {this.state.loading ? <View style={styles.spinner}>
-        <Spinner size={50} type={'Wave'} color={'#423A47'}/>
+        <Spinner size={50} type={'Wave'} color={'#fffaec'}/>
         </View> : null }
 
         <Content style={styles.container}>
+           <View style={styles.smalldivider}></View>
 
-{/*        {this.state.loaded ?
-        <View>
+        {this.state.loaded ? <View>
         <FlatList
         data={this.state.data}
         showsVerticalScrollIndicator={false}
@@ -62,53 +75,27 @@ render() {
         renderItem={({ item, index }) => (
 
         <View style={styles.card} >
-          <Text style={styles.quote}>{item.quote}</Text>
-          <Text style={styles.author}>{item.author}</Text>
+          <Text style={styles.quote}>
+            {item.quote}
+          </Text>
+          <Text style={styles.author}>
+            {item.author}
+          </Text>
         </View>
 
-         )}/>
-        </View>
-        : null }*/}
+         )}/></View> : null }
 
         <View style={styles.smalldivider}></View>
-
-        <View style={styles.card} >
-          <Text style={styles.quote}>I want to host a religious show. I'm sure nobody will be wanting the 11 o'clock spot on Sunday morning. I think we should really get some of our own preachers and preach that gay is good. And we'd have a great choir.</Text>
-          <Text style={styles.author}>Martin Luther King, Jr.</Text>
-        </View>
-
-        <View style={styles.card} >
-          <Text style={styles.quote}>he means by which we live have outdistanced the ends for which we live. Our scientific power has outrun our spiritual power. We have guided missiles and misguided men.</Text>
-          <Text style={styles.author}>John Doe</Text>
-        </View>
-
-        <View style={styles.card} >
-          <Text style={styles.quote}>I lived the true American dream, because I was able to pursue what I set as my goals at a very young age.</Text>
-          <Text style={styles.author}>Russell Crowe"</Text>
-        </View>
-
-        <View style={styles.card} >
-          <Text style={styles.quote}>he means by which we live have outdistanced the ends for which we live. Our scientific power has outrun our spiritual power. We have guided missiles and misguided men.</Text>
-          <Text style={styles.author}>John Doe</Text>
-        </View>
-
-        <View style={styles.card} >
-          <Text style={styles.quote}>I lived the true American dream, because I was able to pursue what I set as my goals at a very young age.</Text>
-          <Text style={styles.author}>Russell Crowe"</Text>
-        </View>
-
-        <View style={styles.card} >
-          <Text style={styles.quote}>I want to host a religious show. I'm sure nobody will be wanting the 11 o'clock spot on Sunday morning. I think we should really get some of our own preachers and preach that gay is good. And we'd have a great choir.</Text>
-          <Text style={styles.author}>Martin Luther King, Jr.</Text>
-        </View>
-
-        <View style={styles.smalldivider}></View>
-                        
         </Content>
 
         <Footer>
           <FooterTab style={styles.footer}>
-              <Text style={styles.white}>usfslk.github.io</Text>
+              <TouchableOpacity
+              onPress={ ()=>{ Linking.openURL('https://protobulb.io')}}>
+                <Text style={styles.footertext}>
+                  usfslk © 2018
+                </Text>
+              </TouchableOpacity>
           </FooterTab>
         </Footer>
 
@@ -118,19 +105,20 @@ render() {
 }
 
 const styles = StyleSheet.create({
-container: {
- backgroundColor: '#7E474C'
-},
- progress: {
-  height: 200,
-},
+  container: {
+   backgroundColor: '#680021'
+  },
   header: {
     paddingTop: getStatusBarHeight(),
     height: 54 + getStatusBarHeight(),
-    backgroundColor: '#7E474C'
+    backgroundColor: '#000',
+    flexDirection: 'row' ,
+    alignItems: 'center',
+    justifyContent: 'space-between' ,
+    paddingHorizontal: 25
   },
   footer: {
-    backgroundColor: '#7E474C',
+    backgroundColor: '#000',
     alignItems:  'center',
     justifyContent:  'center',  
   }, 
@@ -144,27 +132,38 @@ container: {
     flex: 1,
     alignItems: 'center',
     justifyContent:  'center',
+    backgroundColor: '#680021'
   },
   card: {
-    backgroundColor: '#423A47',
-    paddingVertical: 20,
-    paddingHorizontal: 15,
+    backgroundColor: 'rgba(0,0,0, 0.2)',
+    paddingVertical: 12.5,
+    paddingHorizontal: 12.5,
     borderRadius: 7,
     marginVertical: 5,
     marginHorizontal: 15
   },
   quote: {
-    fontWeight: '600',
-    fontSize: 16,
-    color: '#E9E9CD'
+    fontSize: 18,
+    color: '#fffaec',
+    fontFamily: 'reg',
+    marginBottom: 5
    },
    author: {
-    fontWeight: '200',
-    fontSize: 12,
-    color: '#D0D0AE',
+    fontSize: 14,
+    color: '#fffaec',
+    fontFamily: 'light'
    },
-   white: {
-    color: '#E9E9CD',
-
+   footertext: {
+    color: '#fffaec',
+    fontFamily: 'reg'
+   },
+   headertext: {
+    fontFamily: 'blk', 
+    color: '#fffaec'
+   }, 
+   logo: {
+    height: 25,
+    width: 25,
+    marginRight: 5
    }
 });
