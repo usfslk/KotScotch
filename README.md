@@ -1,4 +1,5 @@
 
+  
 
 # KotScotch ![CI](https://img.shields.io/badge/build-passing-brightgreen.svg)
  ### Unlimited quotes for daily inspiration
@@ -215,7 +216,7 @@ As you can see we are using a custom fonts, to make it work copy the otf or ttf 
 
  ### 5 -  Apply finishing touches
 
-We set the state to loading to false after the function to tell RN that it's now time to load our `render()` method by adding an **if statement**:
+We set the state to loading to false after the function to tell RN that it's now time to load our `render()` method by adding an **if statement**. 
 
       render() {
         if (this.state.loading) {
@@ -229,6 +230,7 @@ We set the state to loading to false after the function to tell RN that it's now
 The [import](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import) statement is used to import bindings which are exported by another module:
 
 Basic syntax : `import _defaultExport_ from "_module-name_";`
+
 Example used in our app : `import Main from './src/Main';`
 
 If you liked this tutorial, recommend it to others. Thanks for reading!
