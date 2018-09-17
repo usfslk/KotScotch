@@ -1,9 +1,10 @@
 
 # KotScotch ![CI](https://img.shields.io/badge/build-passing-brightgreen.svg)
- 
-![Logo](https://i.stack.imgur.com/IGyoM.png)
 
 Unlimited quotes for daily inspiration
+
+
+![Logo](https://i.stack.imgur.com/IGyoM.png)
 
 ## Getting Started
 
