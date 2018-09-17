@@ -159,7 +159,7 @@ Start by importing it from `'react-native'`
          
 **keyExtractor** is very important, we should implement it to avoid a warning when rendering our list view,  it tells the list to use the `id` for the react keys instead of the default `key` property.
 
-![Screenshot](https://i.imgur.com/f8Q6l44.png)
+![Screenshot](https://i.imgur.com/62yjudN.png)
 
 ### 4 - Customize the layout
 
