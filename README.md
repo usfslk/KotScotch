@@ -15,8 +15,7 @@ With your mobile phone, you can scan the QR code in the link below to load this 
 
 https://expo.io/@usfslk/kotscotch
 
-![Mockup](https://i.imgur.com/FSZnuJw.png)
-
+![Mockup](https://i.imgur.com/18HIFvj.png)
 ## Getting Started
 
 
