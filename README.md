@@ -5,7 +5,7 @@
  ### Unlimited quotes for daily inspiration
 
  
-![Logo](https://i.imgur.com/v6E5IAE.png)
+![Logo](https://i.imgur.com/ye5U7A4.png)
 
 The ability to write one app for both iOS and Android can save significant time and effort for your company and team. There have been various tools released to achieve that goal but each toolset have met with varying degrees of success in the mobile industry. If you already know what React  Native is and why it is awesome, keep reading.
 
@@ -15,7 +15,7 @@ With your mobile phone, you can scan the QR code in the link below to load this 
 
 https://expo.io/@usfslk/kotscotch
 
-![Mockup](https://i.imgur.com/1eyyltA.jpg)
+![Mockup](https://i.imgur.com/FSZnuJw.png)
 
 ## Getting Started
 
