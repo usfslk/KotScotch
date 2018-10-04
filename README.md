@@ -1,9 +1,7 @@
+# KotScotch
+### Unlimited quotes for daily inspiration
 
-  
-
-# KotScotch ![CI](https://img.shields.io/badge/build-passing-brightgreen.svg)
- ### Unlimited quotes for daily inspiration
-
+![CI](https://forthebadge.com/images/badges/winter-is-coming.svg)
  
 ![Logo](https://i.imgur.com/ye5U7A4.png)
 
