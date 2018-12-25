@@ -1,4 +1,4 @@
-# KotScotch
+# Plindol
 ![CI](https://forthebadge.com/images/badges/winter-is-coming.svg)
 
 ### Unlimited quotes for daily inspiration
