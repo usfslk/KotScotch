@@ -1,9 +1,0 @@
-{
-  "name": "mac",
-  "displayName": "mac",
-	"androidStatusBarColor": "#000",
-	"androidStatusBar": {
-		"barStyle": "light-content",
-		"backgroundColor": "#000"
-	}
-}
