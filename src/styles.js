@@ -40,16 +40,16 @@ export default StyleSheet.create({
 		marginLeft: 25
 	},
 	loadingText: {
-		color: "#F5F5F5"
+		color: "#222"
 	},
 	headingText: {
-		color: "#fff",
+		color: "#000",
 		fontWeight: "bold",
 		fontSize: 30,
 		paddingHorizontal: 25
 	},
 	outerList: {
-		backgroundColor: "rgba(255,255,255,0.1)",
+		backgroundColor: "#EEEEEE", 
 		flex: 1,
 		elevation: 0.5,
 		marginLeft: 25,
@@ -64,7 +64,7 @@ export default StyleSheet.create({
 		marginVertical: 25
 	},
 	innerCard: {
-		backgroundColor: "rgba(0,0,0, 0.5)",
+		backgroundColor: "#00B4FF",
 		alignItems: "center",
 		borderRadius: 15,
 		height: 350,
@@ -85,7 +85,8 @@ export default StyleSheet.create({
 		marginBottom: 25
 	},
 	innerCardVertical: {
-		backgroundColor: "rgba(0,0,0, 0.5)",
+		backgroundColor: "#eee",
+		borderColor: '#515151',
 		alignItems: "center",
 		borderRadius: 15,
 		height: 150,
@@ -95,7 +96,7 @@ export default StyleSheet.create({
 	},
 	quote: {
 		fontSize: 16,
-		color: "#FFF"
+		color: "#000"
 	},
 	author: {
 		fontSize: 14,
