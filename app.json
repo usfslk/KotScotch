@@ -8,7 +8,7 @@
       "ios",
       "android"
     ],
-    "version": "1.2.0",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -27,9 +27,10 @@
     },
     "android": {
      "package": "com.usfslk.plindol",
+     "versionCode": 2,
      "permissions": [
-      "READ_PHONE_STATE",
-    ],
+      "READ_PHONE_STATE"
+    ]
    },
     "description": "Unlimited quotes for daily inspiration. Powered by Reddit"
   }

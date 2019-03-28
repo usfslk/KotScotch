@@ -6,16 +6,12 @@ import {
 	Text,
 	StatusBar,
 	ScrollView,
-	ImageBackground
 } from "react-native";
 import styles from "./styles";
 import List from "./List";
 import ListVertical from "./ListVertical";
 import {
 	AdMobBanner,
-	AdMobInterstitial,
-	PublisherBanner,
-	AdMobRewarded,
 } from 'expo'
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
