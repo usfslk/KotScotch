@@ -6,6 +6,7 @@ import {
 	Text,
 	StatusBar,
 	ScrollView,
+	ImageBackground
 } from "react-native";
 import styles from "./styles";
 import List from "./List";
@@ -25,34 +26,40 @@ export default class App extends Component {
 	}
 	render() {
 		return (
-			<View style={{ width: "100%", height: "100%", paddingTop: getStatusBarHeight() + 25, backgroundColor: '#fff' }}	>
-				<StatusBar />
 
-				<AdMobBanner
-					adSize="smartBanner"
-					adUnitID="ca-app-pub-8573101599140905/2580991187"
-					testDeviceID="EMULATOR"
-				/>
+			<ImageBackground
+				style={{ width: "100%", height: "100%" }}
+				source={require('../assets/bg.jpg')}
+				resizeMode="cover"
+			>
+				<View style={{ height: getStatusBarHeight() + 25 }} />
+					<StatusBar barStyle="light-content" />
 
-				<View style={styles.header}>
-					<View style={styles.innerHeader} />
-				</View>
+					<AdMobBanner
+						adSize="smartBanner"
+						adUnitID="ca-app-pub-8573101599140905/2580991187"
+						testDeviceID="EMULATOR"
+					/>
 
-				<ScrollView style={styles.container}>
-					{this.state.loaded ? (
-						<View>
-							<View style={styles.largedivider} />
+					<View style={styles.header}>
+						<View style={styles.innerHeader} />
+					</View>
 
-							<Text style={styles.headingText}>Hot</Text>
-							<List option="hot" url={this.state.shuffle1} />
+					<ScrollView style={styles.container}>
+						{this.state.loaded ? (
+							<View>
+								<View style={styles.largedivider} />
 
-							<Text style={styles.headingText}>New</Text>
-							<ListVertical option="new" url={this.state.shuffle3} />
-						</View>
-					) : null}
-				</ScrollView>
+								<Text style={styles.headingText}>Hot</Text>
+								<List option="hot" url={this.state.shuffle1} />
 
-			</View>
+								<Text style={styles.headingText}>New</Text>
+								<ListVertical option="new" url={this.state.shuffle3} />
+							</View>
+						) : null}
+					</ScrollView>
+			</ImageBackground >
+
 		);
 	}
 }

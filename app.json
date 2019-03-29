@@ -12,7 +12,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash.jpg",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
@@ -27,7 +27,7 @@
     },
     "android": {
      "package": "com.usfslk.plindol",
-     "versionCode": 2,
+     "versionCode": 4,
      "permissions": [
       "READ_PHONE_STATE"
     ]

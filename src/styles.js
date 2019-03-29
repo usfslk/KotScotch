@@ -43,13 +43,13 @@ export default StyleSheet.create({
 		color: "#222"
 	},
 	headingText: {
-		color: "#000",
+		color: "#fff",
 		fontWeight: "bold",
 		fontSize: 30,
 		paddingHorizontal: 25
 	},
 	outerList: {
-		backgroundColor: "#EEEEEE", 
+		backgroundColor: "transparent", 
 		flex: 1,
 		elevation: 0.5,
 		marginLeft: 25,
@@ -64,7 +64,7 @@ export default StyleSheet.create({
 		marginVertical: 25
 	},
 	innerCard: {
-		backgroundColor: "#00B4FF",
+		backgroundColor: "rgba(0,0,0,0.75)", 
 		alignItems: "center",
 		borderRadius: 15,
 		height: 350,
@@ -85,7 +85,7 @@ export default StyleSheet.create({
 		marginBottom: 25
 	},
 	innerCardVertical: {
-		backgroundColor: "#eee",
+		backgroundColor: "rgba(0,0,0,0.75)", 
 		borderColor: '#515151',
 		alignItems: "center",
 		borderRadius: 15,
@@ -95,11 +95,7 @@ export default StyleSheet.create({
 		justifyContent: "center"
 	},
 	quote: {
-		fontSize: 16,
-		color: "#000"
+		fontSize: 15,
+		color: "#fff"
 	},
-	author: {
-		fontSize: 14,
-		color: "#fffaec"
-	}
 });
