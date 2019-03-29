@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, FlatList, ImageBackground } from "react-native";
 import styles from "./styles";
+import * as Animatable from 'react-native-animatable';
 
 class List extends Component {
 	constructor(props) {
@@ -59,7 +60,9 @@ class List extends Component {
 									resizeMode="cover"
 								>
 									<View style={styles.innerCardVertical}>
-										<Text style={styles.quote}>{item.data.title}</Text>
+									<Animatable.Text style={styles.quote} easing='ease-out-circ' duration={1200} animation="fadeInRightBig">
+									{item.data.title}
+									</Animatable.Text>
 									</View>
 								</ImageBackground>
 							</View>

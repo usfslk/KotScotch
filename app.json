@@ -8,11 +8,11 @@
       "ios",
       "android"
     ],
-    "version": "2.0.0",
+    "version": "3.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logo.jpg",
+    "icon": "./assets/logo.png",
     "splash": {
-      "image": "./assets/splash.jpg",
+      "image": "./assets/splash.png",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
@@ -27,7 +27,7 @@
     },
     "android": {
      "package": "com.usfslk.plindol",
-     "versionCode": 4,
+     "versionCode": 5,
      "permissions": [
       "READ_PHONE_STATE"
     ]

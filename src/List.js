@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, FlatList, ImageBackground } from "react-native";
 import styles from "./styles";
+import * as Animatable from 'react-native-animatable';
 
 class List extends Component {
 	constructor(props) {
@@ -60,9 +61,11 @@ class List extends Component {
 									source={{ uri: this.props.url }}
 									resizeMode="cover"
 								>
-									<View style={styles.innerCard}>
-										<Text style={styles.quote}>{item.data.title}</Text>
-									</View>
+									<Animatable.View animation="bounceInRight" easing="ease-out" duration={600} style={styles.innerCard}>
+								<Text style={styles.quote}>
+								{item.data.title}
+								</Text>
+									</Animatable.View>
 								</ImageBackground>
 							</View>
 						)}
