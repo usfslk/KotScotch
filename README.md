@@ -3,6 +3,6 @@
 
 ### Brighten Up Your Day
 
-<a href="https://play.google.com/store/apps/details?id=com.usfslk.plindol" target='_blank'>
-<img src="https://cdn-images-1.medium.com/max/1600/1*EiZrcN_DIapbZaxutxbZRA.png" alt="badge">
+<a href="https://play.google.com/store/apps/details?id=com.usfslk.plindol" target='_blank' >
+<img src="https://cdn-images-1.medium.com/max/1600/1*EiZrcN_DIapbZaxutxbZRA.png" alt="badge" height='50px'>
 </a>
