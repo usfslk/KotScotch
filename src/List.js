@@ -35,6 +35,7 @@ class List extends Component {
 	render() {
 		return (
 			<View style={{flex: 1}}>
+			
 				{this.state.loading ? (
 					<View style={styles.spinner}>
 						<Text style={styles.loadingText}>Loading ...</Text>

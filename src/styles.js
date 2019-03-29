@@ -46,14 +46,14 @@ export default StyleSheet.create({
 		color: "#fff",
 		fontWeight: "bold",
 		fontSize: 30,
-		paddingHorizontal: 25
+		paddingLeft: 25,
 	},
 	outerList: {
 		backgroundColor: "transparent", 
 		flex: 1,
 		elevation: 0.5,
 		marginLeft: 25,
-		marginVertical: 25,
+		marginTop: 25,
 		borderBottomLeftRadius: 15,
 		borderTopLeftRadius: 15
 	},
@@ -64,13 +64,23 @@ export default StyleSheet.create({
 		marginVertical: 25
 	},
 	innerCard: {
-		backgroundColor: "rgba(0,0,0,0.75)", 
+		backgroundColor: "rgba(0,0,0,0.65)", 
 		alignItems: "center",
 		borderRadius: 15,
 		height: 350,
 		width: 250,
 		paddingHorizontal: 25,
 		justifyContent: "center"
+	},
+	innerCardVertical: {
+		backgroundColor: "rgba(0,0,0,0.65)", 
+		borderColor: '#515151',
+		alignItems: "center",
+		borderRadius: 15,
+		height: 150,
+		width:'100%',
+		paddingHorizontal: 25,
+		justifyContent: "center",
 	},
 	outerListVertical : {
 		backgroundColor: "transparent",
@@ -83,16 +93,6 @@ export default StyleSheet.create({
 		width: '100%',
 		marginRight: 25,
 		marginBottom: 25
-	},
-	innerCardVertical: {
-		backgroundColor: "rgba(0,0,0,0.75)", 
-		borderColor: '#515151',
-		alignItems: "center",
-		borderRadius: 15,
-		height: 150,
-		width:'100%',
-		paddingHorizontal: 25,
-		justifyContent: "center"
 	},
 	quote: {
 		fontSize: 15,

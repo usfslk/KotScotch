@@ -13,8 +13,12 @@ import List from "./List";
 import ListVertical from "./ListVertical";
 import {
 	AdMobBanner,
-} from 'expo'
-import { getStatusBarHeight } from "react-native-iphone-x-helper";
+	AdMobInterstitial,
+	PublisherBanner,
+	AdMobRewarded
+} from 'expo';
+import { getStatusBarHeight, ifIphoneX, getBottomSpace } from "react-native-iphone-x-helper";
+import * as Animatable from 'react-native-animatable';
 
 export default class App extends Component {
 	constructor(props) {
@@ -24,6 +28,8 @@ export default class App extends Component {
 			loaded: true
 		};
 	}
+
+
 	render() {
 		return (
 
@@ -32,32 +38,36 @@ export default class App extends Component {
 				source={require('../assets/bg.jpg')}
 				resizeMode="cover"
 			>
-				<View style={{ height: getStatusBarHeight() + 25 }} />
-					<StatusBar barStyle="light-content" />
+				<StatusBar barStyle="light-content" />
+				<View style={{
+					...ifIphoneX(
+						{ height: getStatusBarHeight() + 15 },
+						{ height: getStatusBarHeight() }
+					) }} />
 
-					<AdMobBanner
-						adSize="smartBanner"
+				<View style={{
+					flexDirection: 'row', justifyContent: 'center', marginVertical: 15
+				}}>
+					<PublisherBanner
+						bannerSize="banner"
 						adUnitID="ca-app-pub-8573101599140905/2580991187"
 						testDeviceID="EMULATOR"
 					/>
+				</View>
 
-					<View style={styles.header}>
-						<View style={styles.innerHeader} />
-					</View>
+				<ScrollView style={styles.container}>
+					{this.state.loaded ? (
+						<View>
+							<View style={styles.largedivider} />
 
-					<ScrollView style={styles.container}>
-						{this.state.loaded ? (
-							<View>
-								<View style={styles.largedivider} />
+							<Text style={styles.headingText}>Hot</Text>
+							<List option="hot" url={this.state.shuffle1} />
 
-								<Text style={styles.headingText}>Hot</Text>
-								<List option="hot" url={this.state.shuffle1} />
-
-								<Text style={styles.headingText}>New</Text>
-								<ListVertical option="new" url={this.state.shuffle3} />
-							</View>
-						) : null}
-					</ScrollView>
+							<Text style={styles.headingText}>New</Text>
+							<ListVertical option="new" url={this.state.shuffle3} />
+						</View>
+					) : null}
+				</ScrollView>
 			</ImageBackground >
 
 		);
