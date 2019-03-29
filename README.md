@@ -3,11 +3,7 @@
 
 ### Brighten Up Your Day
 
-Reciper is a recipe search engine that lets you search by ingredients you have at home. 
-
-Find thousands of recipes you can make right now. 
-
-Built with React Native and Firebase.
+Unlimited quotes for daily inspiration
 
 <a href="https://play.google.com/store/apps/details?id=com.usfslk.plindol" target='_blank' >
 <img src="https://cdn-images-1.medium.com/max/1600/1*EiZrcN_DIapbZaxutxbZRA.png" alt="badge" height='50px'>
