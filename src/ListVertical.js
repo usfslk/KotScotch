@@ -59,11 +59,11 @@ class List extends Component {
 									source={{ uri: this.props.url  }}
 									resizeMode="cover"
 								>
-									<View style={styles.innerCardVertical}>
-									<Animatable.Text style={styles.quote} easing='ease-out-circ' duration={1200} animation="fadeInRightBig">
+									<Animatable.View easing='ease-out-circ' duration={1600} animation="slideInDown" style={styles.innerCardVertical}>
+									<Text style={styles.quote}>
 									{item.data.title}
-									</Animatable.Text>
-									</View>
+									</Text>
+									</Animatable.View>
 								</ImageBackground>
 							</View>
 						)}

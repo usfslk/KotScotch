@@ -61,7 +61,7 @@ class List extends Component {
 									source={{ uri: this.props.url }}
 									resizeMode="cover"
 								>
-									<Animatable.View animation="bounceInRight" easing="ease-out" duration={600} style={styles.innerCard}>
+									<Animatable.View animation="slideInDown" easing="ease-out" duration={800} style={styles.innerCard}>
 								<Text style={styles.quote}>
 								{item.data.title}
 								</Text>
