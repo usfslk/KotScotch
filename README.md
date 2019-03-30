@@ -4,7 +4,7 @@
 
 #### Brighten Up Your Day
 
-<img  src="https://chrysntm.com/wp-content/uploads/2018/12/4-700x1244.jpg"  alt="showcase"  height='500px'>
+<img  src="https://i.imgur.com/YcQgheJ.jpg"  alt="showcase"  height='500px'>
 
 <a  href="https://play.google.com/store/apps/details?id=com.usfslk.plindol"  target='_blank' >
 
