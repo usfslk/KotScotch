@@ -12,13 +12,9 @@ import styles from "./styles";
 import List from "./List";
 import ListVertical from "./ListVertical";
 import {
-	AdMobBanner,
-	AdMobInterstitial,
 	PublisherBanner,
-	AdMobRewarded
 } from 'expo';
-import { getStatusBarHeight, ifIphoneX, getBottomSpace } from "react-native-iphone-x-helper";
-import * as Animatable from 'react-native-animatable';
+import { getStatusBarHeight, ifIphoneX } from "react-native-iphone-x-helper";
 
 export default class App extends Component {
 	constructor(props) {
@@ -29,13 +25,12 @@ export default class App extends Component {
 		};
 	}
 
-
 	render() {
 		return (
 
 			<ImageBackground
 				style={{ width: "100%", height: "100%" }}
-				source={require('../assets/bg.jpg')}
+				source={{uri: 'https://source.unsplash.com/random/1920x1080'}}
 				resizeMode="cover"
 			>
 				<StatusBar barStyle="light-content" />
@@ -43,7 +38,8 @@ export default class App extends Component {
 					...ifIphoneX(
 						{ height: getStatusBarHeight() + 15 },
 						{ height: getStatusBarHeight() }
-					) }} />
+					)
+				}} />
 
 				<View style={{
 					flexDirection: 'row', justifyContent: 'center', marginVertical: 15
@@ -60,10 +56,16 @@ export default class App extends Component {
 						<View>
 							<View style={styles.largedivider} />
 
-							<Text style={styles.headingText}>Hot</Text>
+							<View style={styles.headingContainer} >
+								<Text style={styles.headingText}>Hot</Text>
+							</View>
+
 							<List option="hot" url={this.state.shuffle1} />
 
-							<Text style={styles.headingText}>New</Text>
+							<View style={styles.headingContainer} >
+								<Text style={styles.headingText}>Trending</Text>
+							</View>
+
 							<ListVertical option="new" url={this.state.shuffle3} />
 						</View>
 					) : null}

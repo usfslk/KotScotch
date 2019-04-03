@@ -1,30 +1,10 @@
-import { StyleSheet, StatusBar } from "react-native";
+import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
 	container: {
 		backgroundColor: "transparent",
 		flex: 1,
 		height: "100%"
-	},
-	header: {
-		backgroundColor: "#000"
-	},
-	innerHeader: {
-		paddingTop: StatusBar.currentHeight,
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "space-between"
-	},
-	headertext: {
-		color: "#fff",
-		fontWeight: "bold",
-		fontSize: 30,
-		marginLeft: 25
-	},
-	logo: {
-		height: 25,
-		width: 25,
-		marginRight: 25
 	},
 	smalldivider: {
 		marginBottom: 10
@@ -44,9 +24,14 @@ export default StyleSheet.create({
 	},
 	headingText: {
 		color: "#fff",
+		textAlign: "center",
+		paddingVertical: 10,
 		fontWeight: "bold",
 		fontSize: 30,
-		paddingLeft: 25,
+	},
+	headingContainer: {
+		backgroundColor: "rgba(0,0,0,0.25)",
+
 	},
 	outerList: {
 		backgroundColor: "transparent", 
@@ -64,7 +49,7 @@ export default StyleSheet.create({
 		marginVertical: 25
 	},
 	innerCard: {
-		backgroundColor: "rgba(0,0,0,0.65)", 
+		backgroundColor: "rgba(0,0,0,0.75)", 
 		alignItems: "center",
 		borderRadius: 15,
 		height: 350,
@@ -73,11 +58,11 @@ export default StyleSheet.create({
 		justifyContent: "center"
 	},
 	innerCardVertical: {
-		backgroundColor: "rgba(0,0,0,0.65)", 
+		backgroundColor: "rgba(0,0,0,0.75)", 
 		borderColor: '#515151',
 		alignItems: "center",
 		borderRadius: 15,
-		height: 150,
+		height: 200,
 		width:'100%',
 		paddingHorizontal: 25,
 		justifyContent: "center",
@@ -89,7 +74,7 @@ export default StyleSheet.create({
 		marginHorizontal: 25,
 	},
 	cardVertical: {
-		height: 150,
+		height: 200,
 		width: '100%',
 		marginRight: 25,
 		marginBottom: 25
@@ -98,4 +83,9 @@ export default StyleSheet.create({
 		fontSize: 15,
 		color: "#fff"
 	},
+	button: {
+		paddingVertical: 10,
+		paddingHorizontal: 10,
+		borderRadius: 99
+	  },
 });

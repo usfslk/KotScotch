@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { View, Text, FlatList, ImageBackground } from "react-native";
+import { View, Text, FlatList, ImageBackground, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import * as Animatable from 'react-native-animatable';
+import { Ionicons } from '@expo/vector-icons';
 
 class List extends Component {
 	constructor(props) {
@@ -15,7 +16,7 @@ class List extends Component {
 		this.setState({ loaded: false, loading: true });
 		let url = `https://www.reddit.com/r/quotes/${
 			this.props.option
-		}.json?limit=25`;
+			}.json?limit=25`;
 		console.log(url);
 		fetch(url)
 			.then(response => response.json())
@@ -29,13 +30,17 @@ class List extends Component {
 	}
 
 	componentDidMount() {
-		const { option } = this.props.option;
-    const data = this.state;
-    this.apiCall()
+		this.apiCall()
 	}
+
+	copyQuote = (quote) => {
+		Clipboard.setString(quote);
+		Alert.alert('Copied to clipboard.');
+	}
+
 	render() {
 		return (
-			<View style={{flex: 1}}>
+			<View style={{ flex: 1 }}>
 				{this.state.loading ? (
 					<View style={styles.spinner}>
 						<Text style={styles.loadingText}>Loading ...</Text>
@@ -56,13 +61,22 @@ class List extends Component {
 								<ImageBackground
 									style={{ width: "100%", height: "100%" }}
 									borderRadius={15}
-									source={{ uri: this.props.url  }}
+									source={{ uri: this.props.url }}
 									resizeMode="cover"
 								>
 									<Animatable.View easing='ease-out-circ' duration={1600} animation="slideInDown" style={styles.innerCardVertical}>
-									<Text style={styles.quote}>
-									{item.data.title}
-									</Text>
+										<Text style={styles.quote}>
+											{item.data.title}
+										</Text>
+
+										<View style={styles.smalldivider} />
+
+										<TouchableOpacity
+											style={styles.button}
+											onPress={() => this.copyQuote(item.data.title)}>
+											<Ionicons name="ios-copy" size={20} color="white" />
+										</TouchableOpacity>
+
 									</Animatable.View>
 								</ImageBackground>
 							</View>
