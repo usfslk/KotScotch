@@ -35,8 +35,10 @@ class List extends Component {
 
 	copyQuote = (quote) => {
 		Clipboard.setString(quote);
-		Alert.alert('Copied to clipboard.');
-	}
+		Alert.alert(
+			'Success!',
+			'Copied to clipboard',
+			); 	}
 
 	render() {
 		return (
@@ -66,7 +68,7 @@ class List extends Component {
 									source={{ uri: this.props.url }}
 									resizeMode="cover"
 								>
-									<Animatable.View animation="slideInDown" easing="ease-out" duration={800} style={styles.innerCard}>
+									<Animatable.View animation="fadeIn" easing="ease-in" duration={1000} style={styles.innerCard}>
 										<Text style={styles.quote}>
 											{item.data.title}
 										</Text>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, FlatList, ImageBackground, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, ImageBackground, TouchableOpacity, Clipboard, Alert } from "react-native";
 import styles from "./styles";
 import * as Animatable from 'react-native-animatable';
 import { Ionicons } from '@expo/vector-icons';
@@ -35,7 +35,10 @@ class List extends Component {
 
 	copyQuote = (quote) => {
 		Clipboard.setString(quote);
-		Alert.alert('Copied to clipboard.');
+		Alert.alert(
+		'Success!',
+		'Copied to clipboard',
+		);
 	}
 
 	render() {
@@ -64,7 +67,7 @@ class List extends Component {
 									source={{ uri: this.props.url }}
 									resizeMode="cover"
 								>
-									<Animatable.View easing='ease-out-circ' duration={1600} animation="slideInDown" style={styles.innerCardVertical}>
+									<Animatable.View easing='ease-in' duration={1000} animation="fadeIn" style={styles.innerCardVertical}>
 										<Text style={styles.quote}>
 											{item.data.title}
 										</Text>

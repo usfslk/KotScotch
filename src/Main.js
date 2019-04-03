@@ -6,7 +6,8 @@ import {
 	Text,
 	StatusBar,
 	ScrollView,
-	ImageBackground
+	ImageBackground,
+	TouchableOpacity
 } from "react-native";
 import styles from "./styles";
 import List from "./List";
@@ -19,18 +20,24 @@ import { getStatusBarHeight, ifIphoneX } from "react-native-iphone-x-helper";
 export default class App extends Component {
 	constructor(props) {
 		super(props);
+		this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
 		this.state = {
 			loading: false,
 			loaded: true
 		};
 	}
 
+	forceUpdateHandler() {
+		this.forceUpdate();
+	};
+
+
 	render() {
 		return (
 
 			<ImageBackground
 				style={{ width: "100%", height: "100%" }}
-				source={{uri: 'https://source.unsplash.com/random/1920x1080'}}
+				source={{ uri: 'https://source.unsplash.com/random/' + Math.random() }}
 				resizeMode="cover"
 			>
 				<StatusBar barStyle="light-content" />
@@ -47,14 +54,12 @@ export default class App extends Component {
 					<PublisherBanner
 						bannerSize="banner"
 						adUnitID="ca-app-pub-8573101599140905/2580991187"
-						testDeviceID="EMULATOR"
 					/>
 				</View>
 
 				<ScrollView style={styles.container}>
 					{this.state.loaded ? (
 						<View>
-							<View style={styles.largedivider} />
 
 							<View style={styles.headingContainer} >
 								<Text style={styles.headingText}>Hot</Text>
@@ -67,6 +72,7 @@ export default class App extends Component {
 							</View>
 
 							<ListVertical option="new" url={this.state.shuffle3} />
+
 						</View>
 					) : null}
 				</ScrollView>

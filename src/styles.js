@@ -20,24 +20,22 @@ export default StyleSheet.create({
 		marginLeft: 25
 	},
 	loadingText: {
-		color: "#222"
+		color: "#fff",
+		fontWeight: "bold",
 	},
 	headingText: {
 		color: "#fff",
 		textAlign: "center",
 		paddingVertical: 10,
 		fontWeight: "bold",
-		fontSize: 30,
+		fontSize: 20,
 	},
 	headingContainer: {
-		backgroundColor: "rgba(0,0,0,0.75)",
-		marginHorizontal: 25,
-		borderRadius: 5
+		backgroundColor: "rgba(0,0,0,0.80)",
 	},
 	outerList: {
 		backgroundColor: "transparent", 
 		flex: 1,
-		elevation: 0.5,
 		marginLeft: 25,
 		marginTop: 25,
 		borderBottomLeftRadius: 15,
@@ -63,7 +61,7 @@ export default StyleSheet.create({
 		borderColor: '#515151',
 		alignItems: "center",
 		borderRadius: 10,
-		height: 200,
+		height: 150,
 		width:'100%',
 		paddingHorizontal: 25,
 		justifyContent: "center",
@@ -75,7 +73,7 @@ export default StyleSheet.create({
 		marginHorizontal: 25,
 	},
 	cardVertical: {
-		height: 200,
+		height: 150,
 		width: '100%',
 		marginRight: 25,
 		marginBottom: 25
