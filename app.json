@@ -27,7 +27,7 @@
     },
     "android": {
      "package": "com.usfslk.plindol",
-     "versionCode": 5,
+     "versionCode": 6,
      "permissions": [
       "READ_PHONE_STATE"
     ]

@@ -30,8 +30,9 @@ export default StyleSheet.create({
 		fontSize: 30,
 	},
 	headingContainer: {
-		backgroundColor: "rgba(0,0,0,0.25)",
-
+		backgroundColor: "rgba(0,0,0,0.75)",
+		marginHorizontal: 25,
+		borderRadius: 5
 	},
 	outerList: {
 		backgroundColor: "transparent", 
@@ -51,7 +52,7 @@ export default StyleSheet.create({
 	innerCard: {
 		backgroundColor: "rgba(0,0,0,0.75)", 
 		alignItems: "center",
-		borderRadius: 15,
+		borderRadius: 10,
 		height: 350,
 		width: 250,
 		paddingHorizontal: 25,
@@ -61,7 +62,7 @@ export default StyleSheet.create({
 		backgroundColor: "rgba(0,0,0,0.75)", 
 		borderColor: '#515151',
 		alignItems: "center",
-		borderRadius: 15,
+		borderRadius: 10,
 		height: 200,
 		width:'100%',
 		paddingHorizontal: 25,
@@ -86,6 +87,5 @@ export default StyleSheet.create({
 	button: {
 		paddingVertical: 10,
 		paddingHorizontal: 10,
-		borderRadius: 99
 	  },
 });
