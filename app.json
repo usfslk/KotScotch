@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Plindol",
+    "name": "Plindol - Unlimited quotes for daily inspiration",
     "slug": "Plindol",
     "privacy": "public",
     "sdkVersion": "31.0.0",
@@ -27,11 +27,11 @@
     },
     "android": {
      "package": "com.usfslk.plindol",
-     "versionCode": 6,
+     "versionCode": 7,
      "permissions": [
       "READ_PHONE_STATE"
     ]
    },
-    "description": "Unlimited quotes for daily inspiration. Powered by Reddit"
+    "description": "Brighten Up Your Day!"
   }
 }

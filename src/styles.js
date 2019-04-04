@@ -21,17 +21,15 @@ export default StyleSheet.create({
 	},
 	loadingText: {
 		color: "#fff",
-		fontWeight: "bold",
+		fontWeight: "200",
+		fontSize: 10,
 	},
 	headingText: {
 		color: "#fff",
 		textAlign: "center",
 		paddingVertical: 10,
-		fontWeight: "bold",
-		fontSize: 20,
-	},
-	headingContainer: {
-		backgroundColor: "rgba(0,0,0,0.80)",
+		fontWeight: "900",
+		fontSize: 30,
 	},
 	outerList: {
 		backgroundColor: "transparent", 
@@ -48,7 +46,7 @@ export default StyleSheet.create({
 		marginVertical: 25
 	},
 	innerCard: {
-		backgroundColor: "rgba(0,0,0,0.75)", 
+		backgroundColor: "rgba(0,0,0,0.5)", 
 		alignItems: "center",
 		borderRadius: 10,
 		height: 350,
@@ -57,14 +55,17 @@ export default StyleSheet.create({
 		justifyContent: "center"
 	},
 	innerCardVertical: {
-		backgroundColor: "rgba(0,0,0,0.75)", 
+		backgroundColor: "rgba(0,0,0,0.5)", 
 		borderColor: '#515151',
-		alignItems: "center",
 		borderRadius: 10,
 		height: 150,
 		width:'100%',
 		paddingHorizontal: 25,
 		justifyContent: "center",
+		alignItems: "center",
+		flexDirection: 'row',
+		flexWrap: 'nowrap'
+
 	},
 	outerListVertical : {
 		backgroundColor: "transparent",
@@ -79,11 +80,27 @@ export default StyleSheet.create({
 		marginBottom: 25
 	},
 	quote: {
-		fontSize: 15,
-		color: "#fff"
+		fontSize: 14,
+		fontWeight: "200",
+		color: "#fff",
+		marginHorizontal: 25,
 	},
 	button: {
 		paddingVertical: 10,
 		paddingHorizontal: 10,
 	  },
+	  coffee: {
+		flexDirection: 'column',
+		alignItems: 'center',
+		justifyContent: 'center',
+		paddingVertical: 15,
+		justifyContent: 'flex-end',
+	  },
+	  adfree: {
+		fontSize: 10,
+		textAlign: 'center',
+		marginTop: 5,
+		color: "#fff",
+	  },
+	
 });

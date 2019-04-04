@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, FlatList, ImageBackground, TouchableOpacity, Clipboard, Alert } from "react-native";
+import { View, Text, FlatList, ImageBackground, TouchableOpacity, Clipboard, Alert, Linking, Image } from "react-native";
 import styles from "./styles";
 import * as Animatable from 'react-native-animatable';
 import { Ionicons } from '@expo/vector-icons';
@@ -8,7 +8,8 @@ class List extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			loading: true
+			loading: true,
+			loaded: false
 		};
 	}
 
@@ -36,8 +37,7 @@ class List extends Component {
 	copyQuote = (quote) => {
 		Clipboard.setString(quote);
 		Alert.alert(
-		'Success!',
-		'Copied to clipboard',
+			'Copied to clipboard!',
 		);
 	}
 
@@ -50,42 +50,54 @@ class List extends Component {
 					</View>
 				) : null}
 
-				<View style={styles.outerListVertical}>
-					<FlatList
-						showVerticalScrollIndicator={false}
-						automaticallyAdjustContentInsets={false}
-						contentInset={{ top: 0, bottom: 0 }}
-						data={this.state.data}
-						showsVerticalScrollIndicator={false}
-						ListEmptyComponent={this.noItemDisplay}
-						keyExtractor={(item, index) => item.data.title}
-						renderItem={({ item, index }) => (
-							<View style={styles.cardVertical}>
-								<ImageBackground
-									style={{ width: "100%", height: "100%" }}
-									borderRadius={15}
-									source={{ uri: this.props.url }}
-									resizeMode="cover"
-								>
-									<Animatable.View easing='ease-in' duration={1000} animation="fadeIn" style={styles.innerCardVertical}>
-										<Text style={styles.quote}>
-											{item.data.title}
-										</Text>
+				{this.state.loaded ? (
+					<View style={styles.outerListVertical}>
 
-										<View style={styles.smalldivider} />
+						<FlatList
+							showVerticalScrollIndicator={false}
+							automaticallyAdjustContentInsets={false}
+							contentInset={{ top: 0, bottom: 0 }}
+							data={this.state.data}
+							showsVerticalScrollIndicator={false}
+							ListEmptyComponent={this.noItemDisplay}
+							keyExtractor={(item, index) => item.data.title}
+							renderItem={({ item, index }) => (
+								<View style={styles.cardVertical}>
+									<ImageBackground
+										style={{ width: "100%", height: "100%" }}
+										borderRadius={15}
+										source={{ uri: this.props.url }}
+										resizeMode="cover"
+									>
+										<Animatable.View easing='ease-in' duration={1000} animation="fadeIn" style={styles.innerCardVertical}>
+											<Text style={styles.quote}>
+												{item.data.title}
+											</Text>
 
-										<TouchableOpacity
-											style={styles.button}
-											onPress={() => this.copyQuote(item.data.title)}>
-											<Ionicons name="ios-copy" size={20} color="white" />
-										</TouchableOpacity>
+											<View style={styles.smalldivider} />
 
-									</Animatable.View>
-								</ImageBackground>
-							</View>
-						)}
-					/>
-				</View>
+											<TouchableOpacity
+												style={styles.button}
+												onPress={() => this.copyQuote(item.data.title)}>
+												<Ionicons name="ios-copy" size={20} color="white" />
+											</TouchableOpacity>
+
+										</Animatable.View>
+									</ImageBackground>
+								</View>
+							)}
+						/>
+
+						<TouchableOpacity
+							onPress={() => Linking.openURL('https://www.buymeacoffee.com/usfslk')}
+							style={styles.coffee}>
+							<Image source={require('../assets/coffee.png')} />
+							<Text style={styles.adfree}>You’ll receive my endless gratitude and adoration.</Text>
+						</TouchableOpacity>
+
+					</View>
+				) : null}
+
 			</View>
 		);
 	}

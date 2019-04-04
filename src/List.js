@@ -36,9 +36,9 @@ class List extends Component {
 	copyQuote = (quote) => {
 		Clipboard.setString(quote);
 		Alert.alert(
-			'Success!',
-			'Copied to clipboard',
-			); 	}
+			'Copied to clipboard!',
+		);
+	}
 
 	render() {
 		return (
